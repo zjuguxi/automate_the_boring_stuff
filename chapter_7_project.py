@@ -11,26 +11,26 @@ import re
 
 text = input('enter your password >>> ')
 
-longDetect = re.compile(r'^.{8}')                        # 8位开头
-lowercaseDetect = re.compile(r'[a-z]')              # 有小写
-uppercaseDetect = re.compile(r'[A-Z]')             # 有大写
-numberDetect = re.compile(r'[0-9]')                       # 有数字
+longDetect = re.compile(r'.{8}')                        # 8位开头
+lowercaseDetect = re.compile(r'[a-z]+')              # 有小写
+uppercaseDetect = re.compile(r'[A-Z]+')             # 有大写
+numberDetect = re.compile(r'[0-9]+')                       # 有数字
 
-if longDetect(text) == True:
-    lowercaseDetect(text)
-    if lowercaseDetect(text) == True:
-        uppercaseDetect(text)
-        if uppercaseDetect(text) == True:
-            numberDetect(text)
-            if numberDetect(text) == True:
+if len(text) > 8:
+    lowercaseDetect.findall(text)
+    if lowercaseDetect.findall(text) == True:
+        uppercaseDetect.findall(text)
+        if uppercaseDetect.findall(text) == True:
+            numberDetect.findall(text)
+            if numberDetect.findall(text) == True:
                 print('OK!')
 
             else:
-                print('numbers are needed.')
+                print('Numbers are needed.')
         else:
-            print('Uppercase should be included.')
+            print('Uppercase character is needed.')
 
     else:
-        print('Lowercase should be included.')
+        print('Lowercase character is needed.')
 else:
     print('Not enough characters!')
