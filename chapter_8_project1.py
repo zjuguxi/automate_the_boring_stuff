@@ -15,4 +15,11 @@ for quizNum in range(4):
 
     states = list(capitals.keys())
     random.shuffle(state)
-    
+
+correctAnswer = capitals[states[questionNum]]
+wrongAnswers = list(capital.values())
+del wrongAnswers[wrongAnswers.index(correctAnswer)]
+wrongAnswers = random.sample(wrongAnswers, 3)
+answerOption = wrongAnswers + [correctAnswer]
+random.shuffle(answerOption)
+
