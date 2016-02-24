@@ -14,16 +14,16 @@ for quizNum in range(4):
     quizFile.write('\n\n')
 
     states = list(capitals.keys())
-    random.shuffle(state)
+    random.shuffle(states)
 
 for questionNum in range(4):
 
     correctAnswer = capitals[states[questionNum]]
-    wrongAnswers = list(capital.values())
+    wrongAnswers = list(capitals.values())
     del wrongAnswers[wrongAnswers.index(correctAnswer)]
     wrongAnswers = random.sample(wrongAnswers, 3)
-    answerOption = wrongAnswers + [correctAnswer]
-    random.shuffle(answerOption)
+    answerOptions = wrongAnswers + [correctAnswer]
+    random.shuffle(answerOptions)
 
     quizFile.write('%s. What is the capital of %s?\n' % (questionNum + 1, states[questionNum]))
 
@@ -33,5 +33,6 @@ for questionNum in range(4):
     quizFile.write('\n')
 
     answerKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[answerOptions.index(correctAnswer)]))
-    quizFile.close()
-    answerKeyFile.close()
+
+quizFile.close()
+answerKeyFile.close()
