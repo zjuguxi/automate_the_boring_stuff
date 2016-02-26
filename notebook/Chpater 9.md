@@ -17,5 +17,6 @@
   注意：如果有同名文件，将被覆盖
   
   destination必须是文件名，移动后的文件将使用新名字
-  
-- ​
+
+## Permanently Deleting files and folders
+
