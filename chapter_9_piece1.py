@@ -10,6 +10,9 @@ import os
 #         print(filename)
 
 
+
+
+
 path = ('/Users/apple/')
 
 for foldername, subfolders, filenames in os.walk(path):
