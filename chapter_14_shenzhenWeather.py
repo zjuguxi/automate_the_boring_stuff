@@ -39,13 +39,13 @@ description = w[0]['weather'][0]['description']
 
 # Text message from Twilio, unfinished
 # put your own credentials here 
-ACCOUNT_SID = "AC6d071c009d9f368f3b0889ba27c6dc46" 
-AUTH_TOKEN = "eec5035f2773ee08ff8e4f959e3a3d3d" 
+ACCOUNT_SID = "AC825858b8b7226b32ed899d11e0a55da5" 
+AUTH_TOKEN = "c01335c6267aff225c27d7d285ab5bbd" 
  
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
  
 client.messages.create(
     to="+8618657120319", 
     from_="+12016887056", 
-    body='明天深圳天气是' main' - ' description
+    body='明天深圳天气是%s - %s ' % (main, description)
 )
